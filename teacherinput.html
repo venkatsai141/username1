@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> RESULTS </title>
+</head>
+<style>
+body {
+	  background-image:
+	  url('f4993163a1654e1082b9ca77a38e271a.jpg');
+	  background-repeat: no-repeat;
+	  background-size: 100% 100%;
+	}
+.wrap{
+	margin-top: 20px;
+  margin-left :300px;
+  margin-right :100px;
+  margin-bottom:20px;
+}
+.venkat{
+  margin-top: 10px;
+  margin-left :650px;
+    margin-right :100px;
+  margin-bottom:20px;
+}
+
+.content{
+   margin-top: 10px;
+  margin-left :610px;
+    margin-right :400px;
+  margin-bottom:20px;
+}
+.rollno{
+   margin-top: 100px;
+  margin-left :610px;
+    margin-right :400px;
+  margin-bottom:20px;
+}
+.hello{
+ margin-top: 40px;
+  margin-right :10px;
+  margin-bottom:20px;
+}
+.dm{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+.dsa{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+.lst{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+.etc{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+.fa{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+button{
+margin-top:10px;
+margin-left:610px;
+margin-right:400px;
+margin-bottom:20px;
+}
+.signin1{
+	margin-top:10px;
+	margin-left:1100px;
+	margin-bottom:20px;
+}
+</style>
+<body >
+	<div class="wrap"><h1> <strong> <a style="color : yellow"> MATURI VENKATA SUBBA RAO ENGINEERING COLLEGE   </a></strong> </h1></div>
+	<div class ="venkat">
+	<img src="mvsr.jpg" alt="MVSR" width="150" height="100" margin : "auto">
+	</div>
+	<div class ="content"><h2> <a style="color : orange"> RESULTS WEBSITE </a></h2></div>
+	<form id ="form" method ="post">
+	<div class ="rollno"><input type ="text" id="ROLLNO" placeholder="ROLLNO"/></div>
+	<div class ="dm"><input type ="text" id="DM" placeholder="DM"/></div>
+	<div class ="dsa"><input type ="text" id="DSA" placeholder="DSA"/></div>
+	<div class ="lst"><input type ="text" id="LST" placeholder="LST"/></div>
+	<div class ="etc"><input type ="text" id="ETC" placeholder="ETC"/></div>
+	<div class="signin1">
+		<p>
+		<a style="color : yellow" href="https://v10xoqzv1f.execute-api.ap-northeast-1.amazonaws.com/dev">INSERTED VALUES TILL NOW</a></p>
+		</div>
+	</div class ="hello"><button type="button" onclick="callAPI(document.getElementById('ROLLNO').value,document.getElementById('DSA').value,document.getElementById('DM').value,document.getElementById('ETC').value,document.getElementById('LST').value)">SUBMIT</button></div>
+	</form>
+	<div class ="hello"><h3> <a style="color : brown">CREATED BY:</a></h3>
+	<ul>
+	<li>  <a style="color : green"><em><strong> S.VIGNESH</em></strong></a> </li>
+	<li>  <a style="color : red"><em><strong> M.SAI VARUN</em></strong></a> </li>
+	<li>  <a style="color : blue"><em><strong> K.VENKAT SAI</em></strong></a> </li>
+	</div>
+</body>
+<script>
+var callAPI =(ROLLNO,DSA,DM,ETC,LST)=>{
+var myHeaders = new Headers();
+myHeaders.append("Content-Type","application/json");
+var raw = JSON.stringify({"ROLLNO":ROLLNO,"DSA":DSA,"DM":DM,"ETC":ETC,"LST":LST});
+var requestOptions={
+method :'POST',
+Headers: myHeaders,
+body : raw,
+redirect :'follow'
+};
+fetch( " https://u5x7hicfgk.execute-api.ap-northeast-1.amazonaws.com/dev",requestOptions)
+.then(response => response.text())
+.then(result => alert(JSON.parse(result).body))
+.catch(error => console.log('error',error));
+}
+</script>
+</html>

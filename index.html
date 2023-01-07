@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validated Login Form</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="label"><img class="imge" src="icon.png">       Login</h1>
+		<form class="login_form" action="teacherinput.html" method="get" name="loginForm" onsubmit="return check(this.form)">
+			<div class="font">USERNAME</div>
+			<input type="text" size=45 name="userid">
+			<div class="font font2">Password</div>
+			<input type="password" name="pwd">
+			<button type="submit" onclick="return check(this.form)">Login</button>
+		</form>
+	</div>	
+	<script language="javascript">
+		function check(form)
+		{
+		if((form.userid.value == "venkat" && form.pwd.value == "2451-21-733-088") || (form.userid.value == "varun" && form.pwd.value == "2451-21-733-086")||(form.userid.value == "vignesh" && form.pwd.value == "2451-21-733-073"))
+		{
+			return true;
+		}
+		else
+		{
+			alert("Error Password or Username")
+			document.loginForm.pwd.focus();
+			return false;
+		}
+		}
+	</script>
+</body>
+</html>
